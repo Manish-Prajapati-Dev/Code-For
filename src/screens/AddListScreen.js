@@ -11,7 +11,6 @@ export default function AddListScreen() {
 
     const [title, setTitle] = useState('')
     const [description, setDescription] = useState('')
-    const [data, setData] = useState([])
 
     const handleSubmit = () => {
         let valid = true
@@ -25,15 +24,8 @@ export default function AddListScreen() {
         }
         if (valid) {
             let id = Math.floor(Math.random() * 99 + 10)
-            let body = { id: id, title: title, body: description }
-            setData(prevState => [...prevState, body])
-            showData()
-        }
-    }
-
-    const showData = () => {
-        if (data.length > 0) {
-            navigation.navigate('Home', { body: data })
+            let body = ([...dd, { id: id, title: title, body: description }])
+            navigation.navigate('Home', { body: body })
         }
     }
 
