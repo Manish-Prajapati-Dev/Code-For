@@ -67,7 +67,7 @@ export default function HomeScreen({ route }) {
                 <ActivityIndicator size='large' color='#000' style={{ alignSelf: 'center', flex: 1 }} />
                 :
                 <FlatList
-                    data={[...body]}
+                    data={[...body,...data]}
                     keyExtractor={(i) => i.id}
                     contentContainerStyle={{ alignSelf: 'center', alignItems: 'flex-start' }}
                     renderItem={(item) => {
